@@ -41,7 +41,7 @@ const START=new Date(2026,9,15),END=new Date(2027,0,1),TARGET=76,RUN_DAYS=38,KEY
 const key=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const add=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x},same=(a,b)=>key(a)===key(b),valid=d=>d>=new Date(2026,9,15)&&d<=END,fmt=d=>d.getFullYear()+" 年 "+(d.getMonth()+1)+" 月 "+d.getDate()+" 日",weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
 const dates=[];for(let d=new Date(START);d<=END;d=add(d,1))dates.push(new Date(d));
-const runSet=new Set(Array.from({length:RUN_DAYS},(_,i)=>key(add(START,Math.round(i*78/(RUN_DAYS-1)))));
+const runSet=new Set(Array.from({length:RUN_DAYS},(_,i)=>key(add(START,Math.round(i*78/(RUN_DAYS-1))))));
 let records={};try{records=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){}
 let selected=new Date(Math.max(+START,Math.min(+new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()),+END))),month=new Date(selected.getFullYear(),selected.getMonth(),1),toastTimer;
 const $=id=>document.getElementById(id),isRun=d=>runSet.has(key(d)),checks=d=>Array.isArray(records[key(d)])?records[key(d)]:[false,false],complete=d=>isRun(d)&&checks(d).filter(Boolean).length===2;
