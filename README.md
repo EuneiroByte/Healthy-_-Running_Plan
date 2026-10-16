@@ -41,7 +41,7 @@
 - **当前选择：** 先使用 Leaflet + OpenStreetMap 完成免密钥的定位、轨迹和距离记录。这样更适合当前的静态部署方式，也避免把个人 AK 直接写入公开代码。后续如果需要切换百度地图，可以先确定代理服务与预算，再接入地图提供商。
 
 参考文档：
-- [百度地图 JSAPI 4.0：使用代理保护 AK](https://lbs.baidu.com/docs/jsapi?title=jsapi4/concepts/proxy)
+- [百度地图 JSAPI 4.0：使用代理保护 AK](https://lbs.baidu.com/docs/jsapi?title=jsapi4/guide/concepts/proxy)
 - [Google Maps Platform：获取与限制 API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 - [Leaflet 文档](https://leafletjs.com/reference.html)
 - [OpenStreetMap 版权与署名](https://www.openstreetmap.org/copyright)
@@ -72,7 +72,7 @@
 
 ## 许可证
 
-本项目采用 [MIT License](LICENSE)。
+本项目采用 [Apache License 2.0](LICENSE)。
 
 ---
 
